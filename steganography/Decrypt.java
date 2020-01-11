@@ -12,6 +12,10 @@ public class Decrypt {
                 Scanner hey = new Scanner(System.in);
                 System.out.print("Input absolute file path of file you would like to decrypt: ");
                 String filename = hey.nextLine();
+                if (!filename.endsWith("png")){
+                    System.out.println("File type is not supported!");
+                    break;
+                }
                 hey.close();
                 System.out.println("Now the program will decode your program. This might take a while.....");
                 BufferedImage cipher = ImageIO.read(new File(filename));
